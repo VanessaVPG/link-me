@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-color: #fff;
+  --bg-url: url("/assets/images/bg-mobile-dark.jpg");
+  --bg: rgba(255, 255, 255, 0.1);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --toggle-indicator: url("/assets/images/icons/moon-stars.svg");
+  --position-indicator: translateX(-1px);
+  --bg-hover: rgba(255, 255, 255, 0.05);
+}
+
+.light {
+  --text-color: #000;
+  --bg-url: url("/assets/images/bg-mobile-light.jpg");
+  --bg: rgba(0, 0, 0, 0.1);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --position-indicator: translateX(2rem);
+  --toggle-indicator: url("/assets/images/icons/sun.svg");
+  --bg-hover: rgba(0, 0, 255, 0.4);
+
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+header {
+  display:flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 0.5rem;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  jutify-content: center;
+  margin: auto;
+  padding: 1.5rem;
+  margin-block: 3.5rem;
+}
+a, p, span {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.toggle {
+  cursor: pointer;  
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--stroke-color);
+  border-radius: 999px;
+  height: 1.5rem;
+  width:4rem;
+  margin-block: 0.5rem;
+}
+
+.toggle-indicator {
+  position: absolute;
+  z-index:9999;
+  width: 100%;
+  background-image: var(--toggle-indicator);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 2rem;
+  border-radius: 100%;
+  width: 2rem;
+  transition: transform 0.250s ease-in-out;
+  transform: var(--position-indicator);
+}
+.toggle-bg {
+  content: "";
+  position: absolute;
+  z-index: -10000;
+  height: 2rem;
+  border-radius: 100%;
+  width: 2rem;
+  transition: background 0.250s ease-in-out;
+  background: var(--text-color);
+  transition: transform 0.250s ease-in-out;
+  transform: var(--position-indicator);
+  
+}
+
+
+.avatar {
+  width: 112px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  height:112px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+main {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+ul {
+  max-width: 400px;
+  display: flex;
+  margin: auto;
+  gap: 1rem;
+  flex-direction: column;
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: var(--bg);
+  transition: background 0.250s ease-in-out;
+  border: 1px solid var(--stroke-color);
+}
+
+li:hover {
+  border: 1px solid var(--text-color);
+  background: var(--bg-hover);
+
+}
+
+.social {
+  padding: 1.5rem;
+  gap: 1rem;
+  display: flex;
+}
+.social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 2.5rem;
+  width: 2.5rem;
+  transition: background 0.250s ease-in-out;
+  border-radius: 100%;
+}
+.social a:hover {
+  background: var(--bg);
+
+}
+ion-icon {
+
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+ion-icon[name="heart"] {
+  color: violet;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+span a {
+  border-bottom: 2px solid var(--text-color);
+}
