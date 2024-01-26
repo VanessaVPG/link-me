@@ -24,9 +24,11 @@
 
 }
 
+
 body {
   font-family: 'Roboto Mono', monospace;
   background-image: var(--bg-url);
+  transition: background 0.250s ease-in-out;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
